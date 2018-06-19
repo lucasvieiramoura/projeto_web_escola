@@ -1,0 +1,47 @@
+    <!--<div class="card card-body mb-6">
+        <h4>{{nome}}</h4>
+        <p>{{datanascimento}}</p>
+        <p>{{foto}}</p>
+        <p>{{nomepais}}</p>
+        <p>{{endereco}}</p>
+        <p>{{data}}</p>
+        <a class="btn btn-dark btn-block mb-6" 
+        href="/alunos/edit/{{id}}">Edit</a>     
+        <form method="post" action="/alunos/{{id}}?_method=DELETE">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="Delete">
+        </form>        
+    </div>-->
+<div class="container">
+    <h2>Lista de Presença</h2>
+    <div class="table table-striped col-sm-12">
+            <table>
+                <thead>
+                    <th>Nome</th>
+                    <th>Sala</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>   
+                <form action="/callList" method="POST">                
+                 {{#each alunos}}
+                    <tr>
+                        <td>{{nome}}</td>
+                        <td>{{cor}}</td>
+                        <td>
+                            <div class="form-check-inline">
+                                <label for="" class="form-check-label">
+                                    <input type="radio" name="presença" />Presente
+                                    <input type="radio" name="ausente"/>Ausente
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </form>
+                </tbody>
+                
+                {{else}}
+                <p>Não Existe Alunos Cadastrados</p>
+                {{/each}}
+            </table>
+    </div>
+</div>

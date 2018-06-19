@@ -1,0 +1,16 @@
+{{#each classes}}
+    <div class="card card-body mb-6">
+        <h4>{{nome}}</h4>
+        <p>{{cor}}</p>
+        <p>{{numbersala}}</p>
+        <p>{{capacidade}}</p>
+        <p>{{professores}}</p>
+        <a class="btn btn-dark btn-block mb-6" 
+        href="/classes/edit/{{id}}">Edit</a>
+        <form method="post" action="/classes/{{id}}?_method=DELETE">
+        <input type="hidden" name="_method" value="DELETE">
+        </form>        
+    </div>
+{{else}}
+<p>Não Existe Classes Cadastradas</p>
+{{/each}}

@@ -1,0 +1,34 @@
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+<div class="card card-body">
+    <h3>{{title}}</h3>
+    <form action="/alunos" method="post">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" class="form-control"required>
+        </div>
+        <div class="form-group">
+            <label for="datanascimento">data nascimento</label>
+            <input type="date" name="datanascimento" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="foto">Foto</label>
+            <input type="text" name="foto" class="form-control"required>
+        </div>
+        <div class="form-group">
+            <label for="nomepais">Nome dos Pais</label>
+            <input type="text" name="nomepais" class="form-control"required>
+        </div>
+        <div class="form-group">
+            <label for="endereco">Endereço</label>
+            <input type="text" name="endereco" class="form-control"required>
+        </div>
+        <div class="form-group">
+            <label for="data">Data</label>
+            <span class="form-control" name="data"required>{{formatDate alunos.datanascimento 'DD/MM/YYYY'}}</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
